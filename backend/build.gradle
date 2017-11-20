@@ -11,7 +11,7 @@ buildscript {
 }
 
 repositories {
-    jcenter();
+    jcenter()
 }
 
 apply plugin: 'java'
@@ -28,6 +28,7 @@ dependencies {
     compile 'javax.servlet:servlet-api:2.5'
     compile 'com.google.api-client:google-api-client:1.23.0'
     compile 'com.google.http-client:google-http-client-android:1.23.0'
+    compile project(":jokelib")
 }
 
 appengine {
