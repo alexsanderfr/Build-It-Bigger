@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import com.example.jokelibraryandroid.JokeActivity;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -72,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-
         new EndpointsAsyncTask().execute(this);
     }
 
@@ -84,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
             if (mIdlingResource != null) {
                 mIdlingResource.setIdleState(false);
             }
+            ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+            progressBar.setVisibility(View.VISIBLE);
+            RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.content_layout);
+            relativeLayout.setVisibility(View.GONE);
         }
 
         @Override
@@ -120,6 +125,10 @@ public class MainActivity extends AppCompatActivity {
             if (mIdlingResource != null) {
                 mIdlingResource.setIdleState(true);
             }
+            ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+            progressBar.setVisibility(View.GONE);
+            RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.content_layout);
+            relativeLayout.setVisibility(View.VISIBLE);
             Context context = result.first;
             String joke = result.second;
             Intent intent = new Intent(context, JokeActivity.class);
