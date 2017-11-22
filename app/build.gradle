@@ -46,6 +46,6 @@ dependencies {
     compile project(':jokelibandroid')
     compile 'com.android.support:appcompat-v7:25.4.0'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
-    compile 'com.google.android.gms:play-services-ads:11.6.0'
+    freeCompile 'com.google.android.gms:play-services-ads:11.6.0'
 
 }
