@@ -1,6 +1,6 @@
 # Build It Bigger
 
-Gradle's introduction app for Udacity's Android Developer Nanodegree
+Gradle tutorial app
 
 ### Prerequisites
 
